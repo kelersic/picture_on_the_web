@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav id="main-nav">
+      <ul>
+        <li id="home-button"><a href="index.html">Home</a></li>
+        <li id="digital-button"><a href="#">Digital</a></li>
+        <li id="analog-button"><a href="analog.html">Analog</a></li>
+        <li id="about-button"><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+    <nav id="sub-nav" class="sub-nav">
+      <ul>
+        <li id="color-button"><a href="color-gallery.html">Color</a></li>
+        <li id="bw-button"><a href="bw-gallery.html">B&W</a></li>
+      </ul>
+    </nav>
+  </header>
+    
+
+  
+    <style>
+      #dynamic-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1600px; /* adjust as needed */
+        margin: 0 auto;
+      }
+      
+      #dynamic-gallery img {
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+      }
+    
+      @media (max-width: 600px) {
+        #dynamic-gallery img {
+          width: 100%;
+        }
+      }
+    </style>
+    
+    <div id="dynamic-gallery">
+      <script>
+        const dynamicGallery = document.querySelector('#dynamic-gallery');
+        const images = [];
+        for (let i = 1; i <= 46; i++) {
+          images.push(`image-${i}.jpg`);
+        }
+
+
+    
+        let currentPage = 1;
+    
+        function loadImages() {
+          const start = (currentPage - 1) * 16;
+          const end = currentPage * 16;
+          const imagesToLoad = images.slice(start, end);
+          imagesToLoad.forEach(image => {
+            const img = document.createElement('img');
+            img.src = image;
+            img.alt = image;
+            dynamicGallery.appendChild(img);
+          });
+          currentPage++;
+        }
+    
+        window.addEventListener('scroll', () => {
+          const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+          if (scrollTop + clientHeight >= scrollHeight - 5) {
+            loadImages();
+          }
+        });
+    
+        loadImages();
+      </script>
+    </div>
+    
+
+
+  </main>
+
+  <script>
+    const homeButton = document.querySelector('#home-button a');
+    homeButton.classList.remove('active');
+  
+    const digitalButton = document.querySelector('#digital-button a');
+    digitalButton.classList.add('active');
+
+    const analogButton = document.querySelector('#analog-button a');
+    analogButton.classList.remove('active');
+
+    const aboutButton = document.querySelector('#about-button a');
+    aboutButton.classList.remove('active');
+
+  </script>
+
+<script>
+  // navigation bar scorilling
+  let prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("main-nav").classList.remove("hidden");
+      document.getElementById("sub-nav").classList.remove("hidden");
+    } else {
+      document.getElementById("main-nav").classList.add("hidden");
+      document.getElementById("sub-nav").classList.add("hidden");
+    }
+    prevScrollpos = currentScrollPos;
+  }
+
+</script>
+
+
+  
+  <footer>
+    <p>&copy; Eler.</p>
+  </footer>
+</body>
+</html>
+

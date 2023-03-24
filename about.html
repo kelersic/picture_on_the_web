@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li id="home-button"><a href="index.html">Home</a></li>
+        <li id="digital-button"><a href="digital.html">Digital</a></li>
+        <li id="analog-button"><a href="analog.html">Analog</a></li>
+        <li id="about-button"><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="gallery">
+  
+
+
+  
+        <div class="about-picture">
+            <div class="about-picture about-picture--large"></div>
+                <img src="image6.jpg" alt="Image 1">
+        </div>
+
+        <section class="gallery">
+  
+            <div class="gallery-items">
+              <div class="gallery-item gallery-item--large">
+                <img src="image1.jpg" alt="Image 1">
+              </div>
+          
+
+
+  </main>
+
+
+
+
+  <script>
+    const homeButton = document.querySelector('#home-button a');
+    homeButton.classList.remove('active');
+  
+    const digitalButton = document.querySelector('#digital-button a');
+    digitalButton.classList.remove('active');
+
+    const analogButton = document.querySelector('#analog-button a');
+    analogButton.classList.remove('active');
+
+    const aboutButton = document.querySelector('#about-button a');
+    aboutButton.classList.add('active');
+</script>
+
+
