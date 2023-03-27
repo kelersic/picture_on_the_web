@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <header id="top-nav">
+    <div class="header-container">
     <nav id="main-nav">
       <ul>
         <li id="home-button"><a href="index.html">Home</a></li>
@@ -23,30 +24,10 @@
         <li id="bw-button"><a href="bw-gallery.html">B&W</a></li>
       </ul>
     </nav>
+  </div>
   </header>
     
 
-  
-    <style>
-      #dynamic-gallery {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        max-width: 1600px; /* adjust as needed */
-        margin: 0 auto;
-      }
-      
-      #dynamic-gallery img {
-        width: calc(50% - 10px);
-        margin-bottom: 20px;
-      }
-    
-      @media (max-width: 600px) {
-        #dynamic-gallery img {
-          width: 100%;
-        }
-      }
-    </style>
     
     <!--
     <div id="dynamic-gallery">

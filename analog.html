@@ -8,39 +8,25 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav id="main-nav"> 
-      <ul>
-        <li id="home-button"><a href="index.html">Home</a></li>
-        <li id="digital-button"><a href="digital.html">Digital</a></li>
-        <li id="analog-button"><a href="#">Analog</a></li>
-        <li id="about-button"><a href="about.html">About</a></li>
-      </ul>
-    </nav>
+  <header id="top-nav">
+    <div class="header-container">
+      <nav id="main-nav">
+        <ul>
+          <li id="home-button"><a href="index.html">Home</a></li>
+          <li id="digital-button"><a href="digital.html">Digital</a></li>
+          <li id="analog-button"><a href="#">Analog</a></li>
+          <li id="about-button"><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <style>
-    #dynamic-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      max-width: 1600px; /* adjust as needed */
-      margin: 0 auto;
-    }
-    
-    #dynamic-gallery img {
-      width: calc(50% - 10px);
-      margin-bottom: 20px;
-    }
   
-    @media (max-width: 600px) {
-      #dynamic-gallery img {
-        width: 100%;
-      }
-    }
-  </style>
-  
-  <div id="dynamic-gallery">
+  <div class="container">
+    <div id="dynamic-gallery">
+    </div>
+  </div> 
+
     <script>
       const dynamicGallery = document.querySelector('#dynamic-gallery');
       const images = [];
@@ -80,9 +66,9 @@
       window.onscroll = function() {
         let currentScrollPos = window.pageYOffset;
         if (prevScrollpos > currentScrollPos) {
-          document.getElementById("main-nav").classList.remove("hidden");
+          document.getElementById("top-nav").classList.remove("hidden");
         } else {
-          document.getElementById("main-nav").classList.add("hidden");
+          document.getElementById("top-nav").classList.add("hidden");
         }
         prevScrollpos = currentScrollPos;
       }
