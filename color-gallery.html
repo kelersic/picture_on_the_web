@@ -9,7 +9,7 @@
 </head>
 <body>
   <header id="top-nav">
-    <div class="headr-container">
+    <div class="header-container">
     <nav id="main-nav">
       <ul>
         <li id="home-button"><a href="index.html">Home</a></li>
@@ -20,17 +20,17 @@
     </nav>
     <nav id="sub-nav" class="sub-nav">
       <ul>
-        <li id="color-button"><a href="color-gallery.html">Color</a></li>
+        <li id="color-button"><a href="#">Color</a></li>
         <li id="bw-button"><a href="bw-gallery.html">B&W</a></li>
       </ul>
     </nav>
   </div>
   </header>
+
   <div class="container">
     <div id="dynamic-gallery">
-  
     </div>
-</div>  
+  </div>  
 
 
 </main>
@@ -94,7 +94,6 @@ function loadImages() {
     const img = document.createElement('img');
     img.src = image;
     img.alt = image;
-    img.width= 800
     dynamicGallery.appendChild(img);
   });
   currentPage++;
