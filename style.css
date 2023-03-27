@@ -202,7 +202,21 @@ body {
     width: 100%;
   }
 }
-  
+
+
+#preview-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.preview-gallery img{
+  max-width: 400px;
+  width: calc(50% - 10px);
+  margin-bottom: 20px;  
+}
 
 
 /*  
