@@ -175,13 +175,14 @@ body {
   transition: top 0.3s ease-in-out;
 }
 
+
 #top-nav.hidden {
-  top: -78px;
+  top: -127.55px;
 }
 
 
 .container{
-  margin-top: 100px
+  margin-top: 150px
 }
 
 #dynamic-gallery {
