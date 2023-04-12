@@ -24,43 +24,107 @@
         <li id="bw-button"><a href="bw-gallery.html">B&W</a></li>
       </ul>
     </nav>
+    <nav id="sub-sub-nav" class="sub-sub-nav">
+      <ul>
+        <li id="2013 button"><a href="color_13-14.html">2013</a></li>
+        <li id="2023-button"><a href="color_23.html">2023</a></li>
+      </ul>
+    </nav>
   </div>
   </header>
-
+    
   <div class="container">
-    <li id="color_13-14-button"><a href="color_13-14.html">Year 2013/14</a></li>
-    <div id="color_23-button"><a href="#">Year 2023</a></li>
-    <div id="dynamic-gallery">
+    <div class="gallery1">
+      <li id="gallery1-button"><a href="color_23.html">Year 2023</a></li>
+      <div class="preview-gallery">
+        <img src="pictures_colour_2023/image-1.jpg" alt="Image 1">
+        <img src="pictures_colour_2023/image-2.jpg" alt="Image 2">
+        <img src="pictures_colour_2023/image-3.jpg" alt="Image 3">
+        <img src="pictures_colour_2023/image-4.jpg" alt="Image 4">
+        <img src="pictures_colour_2023/image-5.jpg" alt="Image 5">
+        <img src="pictures_colour_2023/image-6.jpg" alt="Image 6">
+      </div>
     </div>
-  </div>  
+
+    <div class="gallery2">
+      <li id="gallery2-button"><a href="color_13-14.html">Year 2013/14</a></li>
+      <div class="preview-gallery">
+        <img src="pictures_colour_13-14/image_colour_13-14-11.jpg" alt="Image 1">
+        <img src="pictures_colour_13-14/image_colour_13-14-12.jpg" alt="Image 2">
+        <img src="pictures_colour_13-14/image_colour_13-14-13.jpg" alt="Image 3">
+        <img src="pictures_colour_13-14/image_colour_13-14-14.jpg" alt="Image 4">
+        <img src="pictures_colour_13-14/image_colour_13-14-15.jpg" alt="Image 5">
+        <img src="pictures_colour_13-14/image_colour_13-14-16.jpg" alt="Image 6">
+
+      </div>
+    </div>
 
 
-</main>
-<footer>
-  <p>&copy; Eler.</p>
-</footer>
-</body>
+  </div>
 
-<script>
-  const homeButton = document.querySelector('#home-button a');
-  homeButton.classList.remove('active');
+    
+    <!--
+    <div id="dynamic-gallery">
+      <script>
+        const dynamicGallery = document.querySelector('#dynamic-gallery');
+        const images = [];
+        for (let i = 1; i <= 46; i++) {
+          images.push(`image-${i}.jpg`);
+        }
 
-  const digitalButton = document.querySelector('#digital-button a');
-  digitalButton.classList.add('active');
 
-  const analogButton = document.querySelector('#analog-button a');
-  analogButton.classList.remove('active');
+    
+        let currentPage = 1;
+    
+        function loadImages() {
+          const start = (currentPage - 1) * 16;
+          const end = currentPage * 16;
+          const imagesToLoad = images.slice(start, end);
+          imagesToLoad.forEach(image => {
+            const img = document.createElement('img');
+            img.src = image;
+            img.alt = image;
+            dynamicGallery.appendChild(img);
+          });
+          currentPage++;
+        }
+    
+        window.addEventListener('scroll', () => {
+          const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+          if (scrollTop + clientHeight >= scrollHeight - 5) {
+            loadImages();
+          }
+        });
+    
+        loadImages();
+      </script>
+    </div>
+  -->
+    
 
-  const aboutButton = document.querySelector('#about-button a');
-  aboutButton.classList.remove('active');
 
-  const colorButton = document.querySelector('#color-button a');
+  </main>
+
+  <script>
+    const homeButton = document.querySelector('#home-button a');
+    homeButton.classList.remove('active');
+  
+    const digitalButton = document.querySelector('#digital-button a');
+    digitalButton.classList.add('active');
+
+    const analogButton = document.querySelector('#analog-button a');
+    analogButton.classList.remove('active');
+
+    const aboutButton = document.querySelector('#about-button a');
+    aboutButton.classList.remove('active');
+
+    const colorButton = document.querySelector('#color-button a');
   colorButton.classList.add('active');
 
   const bwButton = document.querySelector('#bw-button a');
   bwButton.classList.remove('active');
 
-</script>
+  </script>
 
 <script>
   // navigation bar scorilling
@@ -68,50 +132,22 @@
   window.onscroll = function() {
     let currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
-      document.getElementById("top-nav").classList.remove("hidden");
+      document.getElementById("main-nav").classList.remove("hidden");
+      document.getElementById("sub-nav").classList.remove("hidden");
     } else {
-      document.getElementById("top-nav").classList.add("hidden");
+      document.getElementById("main-nav").classList.add("hidden");
+      document.getElementById("sub-nav").classList.add("hidden");
     }
     prevScrollpos = currentScrollPos;
   }
 
 </script>
 
-<script>
-const dynamicGallery = document.querySelector('#dynamic-gallery');
-const images = [];
-for (let i = 1; i <= 46; i++) {
-  images.push(`pictures_colour_2023/image-${i}.jpg`);
-}
 
+  
+  <footer>
+    <p>&copy; Eler.</p>
+  </footer>
+</body>
+</html>
 
-
-let currentPage = 1;
-
-function loadImages() {
-  const start = (currentPage - 1) * 16;
-  const end = currentPage * 16;
-  const imagesToLoad = images.slice(start, end);
-  imagesToLoad.forEach(image => {
-    const img = document.createElement('img');
-    img.src = image;
-    img.alt = image;
-    dynamicGallery.appendChild(img);
-  });
-  currentPage++;
-}
-
-window.addEventListener('scroll', () => {
-  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-  if (scrollTop + clientHeight >= scrollHeight - 5) {
-    loadImages();
-  }
-});
-
-loadImages();
-
-
-
-
-</script>
-</html> 
