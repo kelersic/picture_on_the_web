@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Picture on the web</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <script src="active_buttons.js"></script>
+  <script src="scrolling_nav_hide.js"></script>
+  <script src="dynamic_gallery.js"></script>
 </head>
 <body>
   <header id="top-nav">
@@ -33,53 +35,13 @@
   </header>
 
   <div class="container">
-    <div id="dynamic-gallery">
-    </div>
-  </div>  
+    <div id="dynamic-gallery" data-image-folder="pictures_colour_2023" data-image-prefix="image" data-num-iterations="46"></div>
+  </div> 
 
 
-</main>
+
 <footer>
   <p>&copy; Eler.</p>
 </footer>
 </body>
-
-
-<script>
-const dynamicGallery = document.querySelector('#dynamic-gallery');
-const images = [];
-for (let i = 1; i <= 46; i++) {
-  images.push(`pictures_colour_2023/image-${i}.jpg`);
-}
-
-
-
-let currentPage = 1;
-
-function loadImages() {
-  const start = (currentPage - 1) * 16;
-  const end = currentPage * 16;
-  const imagesToLoad = images.slice(start, end);
-  imagesToLoad.forEach(image => {
-    const img = document.createElement('img');
-    img.src = image;
-    img.alt = image;
-    dynamicGallery.appendChild(img);
-  });
-  currentPage++;
-}
-
-window.addEventListener('scroll', () => {
-  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-  if (scrollTop + clientHeight >= scrollHeight - 5) {
-    loadImages();
-  }
-});
-
-loadImages();
-
-
-
-
-</script>
 </html> 
