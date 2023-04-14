@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Picture on the web</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
 <body>
   <header id="top-nav">
@@ -21,21 +22,17 @@
     <nav id="sub-nav" class="sub-nav">
       <ul>
         <li id="color-button"><a href="color-gallery.html">Color</a></li>
+        <ul class="hover-sub-nav">
+          <li id="button-2013"><a href="color_13.html">2013</a></li>
+          <li id="button-2023"><a href="#">2023</a></li>
+        </ul>
         <li id="bw-button"><a href="bw-gallery.html">B&W</a></li>
       </ul>
     </nav>
-    <nav id="sub-sub-nav" class="sub-sub-nav">
-        <ul>
-          <li id="2013 button"><a href="color_13-14.html">2013</a></li>
-          <li id="2023-button"><a href="#">2023</a></li>
-        </ul>
-      </nav>
   </div>
   </header>
 
   <div class="container">
-    <li id="color_13-14-button"><a href="color_13-14.html">Year 2013/14</a></li>
-    <div id="color_23-button"><a href="#">Year 2023</a></li>
     <div id="dynamic-gallery">
     </div>
   </div>  
@@ -47,41 +44,6 @@
 </footer>
 </body>
 
-<script>
-  const homeButton = document.querySelector('#home-button a');
-  homeButton.classList.remove('active');
-
-  const digitalButton = document.querySelector('#digital-button a');
-  digitalButton.classList.add('active');
-
-  const analogButton = document.querySelector('#analog-button a');
-  analogButton.classList.remove('active');
-
-  const aboutButton = document.querySelector('#about-button a');
-  aboutButton.classList.remove('active');
-
-  const colorButton = document.querySelector('#color-button a');
-  colorButton.classList.add('active');
-
-  const bwButton = document.querySelector('#bw-button a');
-  bwButton.classList.remove('active');
-
-</script>
-
-<script>
-  // navigation bar scorilling
-  let prevScrollpos = window.pageYOffset;
-  window.onscroll = function() {
-    let currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("top-nav").classList.remove("hidden");
-    } else {
-      document.getElementById("top-nav").classList.add("hidden");
-    }
-    prevScrollpos = currentScrollPos;
-  }
-
-</script>
 
 <script>
 const dynamicGallery = document.querySelector('#dynamic-gallery');

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Picture on the web</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
 <body>
   <header id="top-nav">
@@ -61,17 +62,6 @@
       loadImages();
 
 
-      // navigation bar scorilling
-      let prevScrollpos = window.pageYOffset;
-      window.onscroll = function() {
-        let currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
-          document.getElementById("top-nav").classList.remove("hidden");
-        } else {
-          document.getElementById("top-nav").classList.add("hidden");
-        }
-        prevScrollpos = currentScrollPos;
-      }
 
     </script>
   </div>
@@ -86,16 +76,3 @@
 
 
 
-  <script>
-    const homeButton = document.querySelector('#home-button a');
-    homeButton.classList.remove('active');
-  
-    const digitalButton = document.querySelector('#digital-button a');
-    digitalButton.classList.remove('active');
-
-    const analogButton = document.querySelector('#analog-button a');
-    analogButton.classList.add('active');
-
-    const aboutButton = document.querySelector('#about-button a');
-    aboutButton.classList.remove('active');
-</script>

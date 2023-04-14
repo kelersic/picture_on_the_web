@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Picture on the web</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
 <body>
   <header id="top-nav">
@@ -56,79 +57,11 @@
   </div>
 
     
-    <!--
-    <div id="dynamic-gallery">
-      <script>
-        const dynamicGallery = document.querySelector('#dynamic-gallery');
-        const images = [];
-        for (let i = 1; i <= 46; i++) {
-          images.push(`image-${i}.jpg`);
-        }
-
-
-    
-        let currentPage = 1;
-    
-        function loadImages() {
-          const start = (currentPage - 1) * 16;
-          const end = currentPage * 16;
-          const imagesToLoad = images.slice(start, end);
-          imagesToLoad.forEach(image => {
-            const img = document.createElement('img');
-            img.src = image;
-            img.alt = image;
-            dynamicGallery.appendChild(img);
-          });
-          currentPage++;
-        }
-    
-        window.addEventListener('scroll', () => {
-          const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-          if (scrollTop + clientHeight >= scrollHeight - 5) {
-            loadImages();
-          }
-        });
-    
-        loadImages();
-      </script>
-    </div>
-  -->
     
 
 
   </main>
 
-  <script>
-    const homeButton = document.querySelector('#home-button a');
-    homeButton.classList.remove('active');
-  
-    const digitalButton = document.querySelector('#digital-button a');
-    digitalButton.classList.add('active');
-
-    const analogButton = document.querySelector('#analog-button a');
-    analogButton.classList.remove('active');
-
-    const aboutButton = document.querySelector('#about-button a');
-    aboutButton.classList.remove('active');
-
-  </script>
-
-<script>
-  // navigation bar scorilling
-  let prevScrollpos = window.pageYOffset;
-  window.onscroll = function() {
-    let currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("main-nav").classList.remove("hidden");
-      document.getElementById("sub-nav").classList.remove("hidden");
-    } else {
-      document.getElementById("main-nav").classList.add("hidden");
-      document.getElementById("sub-nav").classList.add("hidden");
-    }
-    prevScrollpos = currentScrollPos;
-  }
-
-</script>
 
 
   
